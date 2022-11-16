@@ -201,5 +201,10 @@ func OpenAndReadFile() ([]Ticket, error) {
 		tickets = append(tickets, ticket)
 	}
 
+	err = res.Close()
+	if err != nil {
+		return nil, err
+	}
+
 	return tickets, nil
 }
